@@ -77,36 +77,22 @@ class UiCreatePassForm(object):
         self.horizontalLayout.setObjectName("horizontalLayout")
 
         self.button_generate.setFont(font)
-        self.button_generate.setStyleSheet("QPushButton {\n"
-                                           "    background-color: #E0FFFF;\n"
-                                           "    border: 2px solid #87CEEB;\n"
-                                           "    border-radius: 5px;\n"
-                                           "}\n"
+        self.button_generate.setStyleSheet("QPushButton {background-color: #E0FFFF;border: 2px solid #87CEEB;"
+                                           "border-radius: 5px;}"
                                            "\n"
-                                           "QPushButton:hover {\n"
-                                           "background-color: #ADD8E6;\n"
-                                           "}\n"
+                                           "QPushButton:hover {background-color: #ADD8E6;}"
                                            "\n"
-                                           "QPushButton:pressed {\n"
-                                           "background-color: #00BFFF\n"
-                                           "}")
+                                           "QPushButton:pressed {background-color: #00BFFF}")
         self.button_generate.setObjectName("button_generate")
         self.horizontalLayout.addWidget(self.button_generate)
 
         self.button_save_1.setFont(font)
-        self.button_save_1.setStyleSheet("QPushButton {\n"
-                                         "    background-color: #67f5a9;\n"
-                                         "    border: 2px solid #67f5a9;\n"
-                                         "    border-radius: 5px;\n"
-                                         "}\n"
+        self.button_save_1.setStyleSheet("QPushButton {background-color: #67f5a9;border: 2px solid #67f5a9;"
+                                         "border-radius: 5px;}"
                                          "\n"
-                                         "QPushButton:hover {\n"
-                                         "background-color: #66ed6a;\n"
-                                         "}\n"
+                                         "QPushButton:hover {background-color: #66ed6a;}"
                                          "\n"
-                                         "QPushButton:pressed {\n"
-                                         "background-color: #23db29;\n"
-                                         "}")
+                                         "QPushButton:pressed {background-color: #23db29;}")
         self.button_save_1.setObjectName("button_save_1")
         self.horizontalLayout.addWidget(self.button_save_1)
         self.main_tab.addTab(self.tab_1, "Generate")
@@ -130,19 +116,12 @@ class UiCreatePassForm(object):
         self.button_save_2.setGeometry(QtCore.QRect(10, 130, 186, 23))
 
         self.button_save_2.setFont(font)
-        self.button_save_2.setStyleSheet("QPushButton {\n"
-                                         "    background-color: #67f5a9;\n"
-                                         "    border: 2px solid #67f5a9;\n"
-                                         "    border-radius: 5px;\n"
-                                         "}\n"
+        self.button_save_2.setStyleSheet("QPushButton {background-color: #67f5a9;border: 2px solid #67f5a9;"
+                                         "border-radius: 5px;}"
                                          "\n"
-                                         "QPushButton:hover {\n"
-                                         "background-color: #66ed6a;\n"
-                                         "}\n"
+                                         "QPushButton:hover {background-color: #66ed6a;}"
                                          "\n"
-                                         "QPushButton:pressed {\n"
-                                         "background-color: #23db29;\n"
-                                         "}")
+                                         "QPushButton:pressed {background-color: #23db29;}")
         self.button_save_2.setObjectName("button_save_2")
         self.main_tab.addTab(self.tab_2, "SimpleCreate")
 

@@ -40,35 +40,21 @@ class UiMainForm(object):
         self.button_create_password.setFont(font)
         self.button_create_password.setContextMenuPolicy(QtCore.Qt.ContextMenuPolicy.DefaultContextMenu)
         self.button_create_password.setLayoutDirection(QtCore.Qt.LayoutDirection.LeftToRight)
-        self.button_create_password.setStyleSheet("QPushButton {\n"
-                                                  "    background-color: #E0FFFF;\n"
-                                                  "    border: 2px solid #87CEEB;\n"
-                                                  "    border-radius: 5px;\n"
-                                                  "}\n"
+        self.button_create_password.setStyleSheet("QPushButton {background-color: #E0FFFF;"
+                                                  "border: 2px solid #87CEEB;border-radius: 5px;}"
                                                   "\n"
-                                                  "QPushButton:hover {\n"
-                                                  "background-color: #ADD8E6;\n"
-                                                  "}\n"
+                                                  "QPushButton:hover {background-color: #ADD8E6;}"
                                                   "\n"
-                                                  "QPushButton:pressed {\n"
-                                                  "background-color: #00BFFF\n"
-                                                  "}")
+                                                  "QPushButton:pressed {background-color: #00BFFF}")
         self.button_create_password.setObjectName("button_create_password")
         self.horizontalLayout.addWidget(self.button_create_password)
         self.button_show_passwords.setFont(font)
-        self.button_show_passwords.setStyleSheet("QPushButton {\n"
-                                                 "    background-color: #E0FFFF;\n"
-                                                 "    border: 2px solid #87CEEB;\n"
-                                                 "    border-radius: 5px;\n"
-                                                 "}\n"
+        self.button_show_passwords.setStyleSheet("QPushButton {background-color: #E0FFFF;border: 2px solid #87CEEB;"
+                                                 "border-radius: 5px;}"
                                                  "\n"
-                                                 "QPushButton:hover {\n"
-                                                 "background-color: #ADD8E6;\n"
-                                                 "}\n"
+                                                 "QPushButton:hover {background-color: #ADD8E6;}"
                                                  "\n"
-                                                 "QPushButton:pressed {\n"
-                                                 "background-color: #00BFFF\n"
-                                                 "}")
+                                                 "QPushButton:pressed {background-color: #00BFFF}")
         self.button_show_passwords.setObjectName("button_show_passwords")
         self.horizontalLayout.addWidget(self.button_show_passwords)
         self.horizontalLayoutWidget_2.setGeometry(QtCore.QRect(10, 10, 361, 31))
