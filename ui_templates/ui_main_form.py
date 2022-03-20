@@ -1,10 +1,13 @@
 from PyQt6 import QtCore, QtGui, QtWidgets
+from services.pyqt_service import UiService
 
 
 class UiMainForm(object):
     def __init__(self, form):
+        self.ui_service = UiService()
+
         self.central_widget = QtWidgets.QWidget(form)
-        self.table_information = QtWidgets.QTableWidget(self.central_widget)
+        self.table = QtWidgets.QTableWidget(self.central_widget)
         self.horizontalLayoutWidget = QtWidgets.QWidget(self.central_widget)
         self.horizontalLayout = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget)
         self.button_create_password = QtWidgets.QPushButton(self.horizontalLayoutWidget)
@@ -17,22 +20,23 @@ class UiMainForm(object):
         form.setObjectName("MainForm")
         form.resize(380, 454)
         form.setStyleSheet("")
+        
         self.central_widget.setObjectName("central_widget")
-        self.table_information.setGeometry(QtCore.QRect(10, 60, 360, 300))
-        self.table_information.setHorizontalHeaderLabels(["service", "password"])
-        self.table_information.setStyleSheet("")
-        self.table_information.setSizeAdjustPolicy(QtWidgets.QAbstractScrollArea.SizeAdjustPolicy.AdjustToContents)
-        self.table_information.setObjectName("table_information")
-        self.table_information.setColumnCount(2)
-        self.horizontalLayoutWidget.setGeometry(QtCore.QRect(10, 360, 361, 80))
+
+        self.table.setGeometry(QtCore.QRect(10, 60, 360, 300))
+        self.table.setHorizontalHeaderLabels(["service", "password"])
+        self.table.setStyleSheet("")
+        self.table.setSizeAdjustPolicy(QtWidgets.QAbstractScrollArea.SizeAdjustPolicy.AdjustToContents)
+        self.table.setObjectName("table")
+        self.table.setColumnCount(2)
+
+        self.horizontalLayoutWidget.setGeometry(QtCore.QRect(10, 360, 360, 80))
         self.horizontalLayoutWidget.setObjectName("horizontalLayoutWidget")
         self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout.setObjectName("horizontalLayout")
-        font = QtGui.QFont()
-        font.setFamily("Tahoma")
-        font.setPointSize(11)
-        font.setBold(False)
-        font.setStrikeOut(False)
+
+        font = self.ui_service.create_font('Tahoma', 11, False, False)
+
         self.button_create_password.setFont(font)
         self.button_create_password.setContextMenuPolicy(QtCore.Qt.ContextMenuPolicy.DefaultContextMenu)
         self.button_create_password.setLayoutDirection(QtCore.Qt.LayoutDirection.LeftToRight)
@@ -51,9 +55,6 @@ class UiMainForm(object):
                                                   "}")
         self.button_create_password.setObjectName("button_create_password")
         self.horizontalLayout.addWidget(self.button_create_password)
-        font = QtGui.QFont()
-        font.setFamily("Tahoma")
-        font.setPointSize(11)
         self.button_show_passwords.setFont(font)
         self.button_show_passwords.setStyleSheet("QPushButton {\n"
                                                  "    background-color: #E0FFFF;\n"
@@ -74,8 +75,7 @@ class UiMainForm(object):
         self.horizontalLayoutWidget_2.setObjectName("horizontalLayoutWidget_2")
         self.horizontalLayout_2.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
-        font = QtGui.QFont()
-        font.setFamily("Tahoma")
+
         font.setPointSize(13)
         self.label_powered.setFont(font)
         self.label_powered.setStyleSheet("background-color: rgb(255, 216, 19);\n"

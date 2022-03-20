@@ -1,8 +1,11 @@
 from PyQt6 import QtCore, QtGui, QtWidgets
+from services.pyqt_service import UiService
 
 
 class UiCreatePassForm(object):
     def __init__(self, form):
+        self.ui_service = UiService()
+
         self.main_tab = QtWidgets.QTabWidget(form)
 
         # Tab 1
@@ -43,9 +46,9 @@ class UiCreatePassForm(object):
         self.formLayoutWidget.setObjectName("formLayoutWidget")
         self.formLayout.setContentsMargins(0, 0, 0, 0)
         self.formLayout.setObjectName("formLayout")
-        font = QtGui.QFont()
-        font.setFamily("Tahoma")
-        font.setPointSize(11)
+
+        font = self.ui_service.create_font('Tahoma', 11, False, False)
+
         self.label_service_name_1.setFont(font)
         self.label_service_name_1.setObjectName("label_service_name_1")
         self.formLayout.setWidget(0, QtWidgets.QFormLayout.ItemRole.LabelRole, self.label_service_name_1)
@@ -53,9 +56,7 @@ class UiCreatePassForm(object):
         self.line_edit_service_name_1.setPlaceholderText("")
         self.line_edit_service_name_1.setObjectName("line_edit_service_name_1")
         self.formLayout.setWidget(0, QtWidgets.QFormLayout.ItemRole.FieldRole, self.line_edit_service_name_1)
-        font = QtGui.QFont()
-        font.setFamily("Tahoma")
-        font.setPointSize(11)
+
         self.label_pass_len.setFont(font)
         self.label_pass_len.setTextFormat(QtCore.Qt.TextFormat.AutoText)
         self.label_pass_len.setObjectName("label_pass_len")
@@ -63,10 +64,7 @@ class UiCreatePassForm(object):
         self.line_edit_pass_len.setMaxLength(2)
         self.line_edit_pass_len.setObjectName("line_edit_pass_len")
         self.formLayout.setWidget(1, QtWidgets.QFormLayout.ItemRole.FieldRole, self.line_edit_pass_len)
-        font = QtGui.QFont()
-        font.setFamily("Tahoma")
-        font.setPointSize(11)
-        font.setBold(True)
+
         self.label_result.setFont(font)
         self.label_result.setObjectName("label_result")
         self.formLayout.setWidget(2, QtWidgets.QFormLayout.ItemRole.LabelRole, self.label_result)
@@ -77,9 +75,7 @@ class UiCreatePassForm(object):
         self.horizontalLayoutWidget.setObjectName("horizontalLayoutWidget")
         self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout.setObjectName("horizontalLayout")
-        font = QtGui.QFont()
-        font.setFamily("Tahoma")
-        font.setPointSize(11)
+
         self.button_generate.setFont(font)
         self.button_generate.setStyleSheet("QPushButton {\n"
                                            "    background-color: #E0FFFF;\n"
@@ -96,9 +92,7 @@ class UiCreatePassForm(object):
                                            "}")
         self.button_generate.setObjectName("button_generate")
         self.horizontalLayout.addWidget(self.button_generate)
-        font = QtGui.QFont()
-        font.setFamily("Tahoma")
-        font.setPointSize(11)
+
         self.button_save_1.setFont(font)
         self.button_save_1.setStyleSheet("QPushButton {\n"
                                          "    background-color: #67f5a9;\n"
@@ -121,25 +115,20 @@ class UiCreatePassForm(object):
         self.formLayoutWidget_2.setObjectName("formLayoutWidget_2")
         self.formLayout_2.setContentsMargins(0, 0, 0, 0)
         self.formLayout_2.setObjectName("formLayout_2")
-        font = QtGui.QFont()
-        font.setFamily("Tahoma")
-        font.setPointSize(11)
+
         self.label_service_name_2.setFont(font)
         self.label_service_name_2.setObjectName("label_service_name_2")
         self.formLayout_2.setWidget(0, QtWidgets.QFormLayout.ItemRole.LabelRole, self.label_service_name_2)
         self.line_edit_service_name_2.setObjectName("line_edit_service_name_2")
         self.formLayout_2.setWidget(0, QtWidgets.QFormLayout.ItemRole.FieldRole, self.line_edit_service_name_2)
-        font = QtGui.QFont()
-        font.setFamily("Tahoma")
-        font.setPointSize(11)
+
         self.label_password.setFont(font)
         self.label_password.setObjectName("label_password")
         self.formLayout_2.setWidget(1, QtWidgets.QFormLayout.ItemRole.LabelRole, self.label_password)
         self.text_edit_password.setObjectName("text_edit_password")
         self.formLayout_2.setWidget(1, QtWidgets.QFormLayout.ItemRole.FieldRole, self.text_edit_password)
         self.button_save_2.setGeometry(QtCore.QRect(10, 130, 186, 23))
-        font = QtGui.QFont()
-        font.setPointSize(11)
+
         self.button_save_2.setFont(font)
         self.button_save_2.setStyleSheet("QPushButton {\n"
                                          "    background-color: #67f5a9;\n"
