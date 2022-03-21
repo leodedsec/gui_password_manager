@@ -1,7 +1,7 @@
 import sys
 from PyQt6 import QtWidgets
-from ui_templates.ui_main_form import UiMainForm
-from ui_templates.ui_create_pass_form import UiCreatePassForm
+from py_forms.ui_main_form import UiMainForm
+from py_forms.ui_create_pass_form import UiCreatePassForm
 
 
 class PasswordManager(QtWidgets.QMainWindow):
