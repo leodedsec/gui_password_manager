@@ -1,10 +1,12 @@
-from PyQt6 import QtCore, QtGui, QtWidgets
-from services.pyqt_service import UiService
+from PyQt6 import QtCore, QtWidgets
+from services.ui_service import UiService
+from services.system_service import SystemService
 
 
 class UiMainForm(object):
     def __init__(self, form):
         self.ui_service = UiService()
+        self.system_service = SystemService()
 
         self.central_widget = QtWidgets.QWidget(form)
         self.table = QtWidgets.QTableWidget(self.central_widget)
@@ -17,9 +19,10 @@ class UiMainForm(object):
         self.label_powered = QtWidgets.QLabel(self.horizontalLayoutWidget_2)
 
     def setup_ui(self, form):
+        font = self.ui_service.create_custom_font(self.system_service.get_path_to_font('montserrat_regular.ttf'))
         form.setObjectName("MainForm")
-        form.resize(380, 454)
-        form.setStyleSheet("")
+        form.setFixedSize(380, 455)
+        form.setFont(font)
         
         self.central_widget.setObjectName("central_widget")
 
@@ -35,9 +38,6 @@ class UiMainForm(object):
         self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout.setObjectName("horizontalLayout")
 
-        font = self.ui_service.create_font('Tahoma', 11, False, False)
-
-        self.button_create_password.setFont(font)
         self.button_create_password.setContextMenuPolicy(QtCore.Qt.ContextMenuPolicy.DefaultContextMenu)
         self.button_create_password.setLayoutDirection(QtCore.Qt.LayoutDirection.LeftToRight)
         self.button_create_password.setStyleSheet("QPushButton {background-color: #E0FFFF;"
@@ -48,7 +48,7 @@ class UiMainForm(object):
                                                   "QPushButton:pressed {background-color: #00BFFF}")
         self.button_create_password.setObjectName("button_create_password")
         self.horizontalLayout.addWidget(self.button_create_password)
-        self.button_show_passwords.setFont(font)
+
         self.button_show_passwords.setStyleSheet("QPushButton {background-color: #E0FFFF;border: 2px solid #87CEEB;"
                                                  "border-radius: 5px;}"
                                                  "\n"
@@ -62,8 +62,6 @@ class UiMainForm(object):
         self.horizontalLayout_2.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
 
-        font.setPointSize(13)
-        self.label_powered.setFont(font)
         self.label_powered.setStyleSheet("background-color: rgb(255, 216, 19);\n"
                                          "border-radius: 5px;")
         self.label_powered.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
