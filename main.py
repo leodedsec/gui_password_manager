@@ -24,7 +24,7 @@ class MainForm(QMainWindow):
 
         self.my_database = my_database
         self.my_database.connect()
-
+        SystemService().get_or_create_table(database=self.my_database, table=PasswordModel)
         SystemService().hide_db(SystemService.get_path_to_db(self.my_database.database))
 
         self.local_saved_model = []
@@ -64,7 +64,6 @@ class MainForm(QMainWindow):
                                          path_to_icon=SystemService.get_path_to_icon('main_icon.png'))
 
         elif len(service_input.text()) != 0 and len(password_input.toPlainText()) >= 8:
-            SystemService().get_or_create_table(database=self.my_database, table=PasswordModel)
             PasswordModel.create(service=service_input.text(),
                                  password=SystemService().simple_encode_password(password_input.toPlainText()))
             self.create_pass_form.close()
