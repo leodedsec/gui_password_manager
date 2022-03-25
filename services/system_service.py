@@ -27,6 +27,7 @@ class SystemService:
 
     @staticmethod
     def get_path_to_db(db_name: str) -> str:
+        """Get path to database"""
         path = os.path.join(ROOT, db_name)
         return path
 
@@ -98,5 +99,5 @@ class SystemService:
                 field.save()
 
     def hide_db(self, path_to_db: str):
+        """Hide database"""
         subprocess.call(['attrib', '+h', '+s', path_to_db])
-        print(True)
