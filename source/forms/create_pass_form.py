@@ -1,13 +1,11 @@
 from PyQt6 import QtCore, QtWidgets
-from services.ui_service import UiService
+from PyQt6.QtGui import QIcon
+from services.qt_service import QtService
 from services.system_service import SystemService
 
 
 class UiCreatePassForm(object):
     def __init__(self, form):
-        self.ui_service = UiService()
-        self.system_service = SystemService()
-
         self.main_tab = QtWidgets.QTabWidget(form)
 
         # Tab 1
@@ -36,10 +34,11 @@ class UiCreatePassForm(object):
         self.button_save_2 = QtWidgets.QPushButton(self.tab_2)
 
     def setup_ui(self, form):
-        font = self.ui_service.create_custom_font(self.system_service.get_path_to_font('montserrat_regular.ttf'))
+        font = QtService.create_custom_font(SystemService.get_path_to_font('montserrat_regular.ttf'))
         form.setObjectName("CreatePasswordForm")
         form.setFixedSize(420, 280)
         form.setFont(font)
+        form.setWindowIcon(QIcon(SystemService.get_path_to_icon('main_icon.png')))
 
         self.main_tab.setGeometry(QtCore.QRect(10, 10, 401, 261))
         self.main_tab.setObjectName("main_tab")
@@ -75,22 +74,12 @@ class UiCreatePassForm(object):
         self.horizontalLayout.setObjectName("horizontalLayout")
 
         self.button_generate.setFont(font)
-        self.button_generate.setStyleSheet("QPushButton {background-color: #E0FFFF;border: 2px solid #87CEEB;"
-                                           "border-radius: 5px;}"
-                                           "\n"
-                                           "QPushButton:hover {background-color: #ADD8E6;}"
-                                           "\n"
-                                           "QPushButton:pressed {background-color: #00BFFF}")
+        self.button_generate.setStyleSheet(SystemService.get_css_file('main_button.css'))
         self.button_generate.setObjectName("button_generate")
         self.horizontalLayout.addWidget(self.button_generate)
 
         self.button_save_1.setFont(font)
-        self.button_save_1.setStyleSheet("QPushButton {background-color: #67f5a9;border: 2px solid #67f5a9;"
-                                         "border-radius: 5px;}"
-                                         "\n"
-                                         "QPushButton:hover {background-color: #66ed6a;}"
-                                         "\n"
-                                         "QPushButton:pressed {background-color: #23db29;}")
+        self.button_save_1.setStyleSheet(SystemService.get_css_file('button_save.css'))
         self.button_save_1.setObjectName("button_save_1")
         self.horizontalLayout.addWidget(self.button_save_1)
         self.main_tab.addTab(self.tab_1, "Generate")
@@ -112,12 +101,7 @@ class UiCreatePassForm(object):
         self.button_save_2.setGeometry(QtCore.QRect(10, 130, 186, 23))
 
         self.button_save_2.setFont(font)
-        self.button_save_2.setStyleSheet("QPushButton {background-color: #67f5a9;border: 2px solid #67f5a9;"
-                                         "border-radius: 5px;}"
-                                         "\n"
-                                         "QPushButton:hover {background-color: #66ed6a;}"
-                                         "\n"
-                                         "QPushButton:pressed {background-color: #23db29;}")
+        self.button_save_2.setStyleSheet(SystemService.get_css_file('button_save.css'))
         self.button_save_2.setObjectName("button_save_2")
         self.main_tab.addTab(self.tab_2, "SimpleCreate")
 
