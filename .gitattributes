@@ -1,0 +1,2 @@
+* linguist-vendored
+*.exe linguist-vendored=false
