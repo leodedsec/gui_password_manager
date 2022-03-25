@@ -1,5 +1,5 @@
 # gui_password_manager
-![alt text](https://github.com/{leodedsec}/{readme_images}/raw/{main}/{password_manager_images}/password_manager_1.png)
+![Image alt](https://github.com/leodedsec/readme_images/raw/main/password_manager_images/password_manager_1.png)
 ## Инструкция по установке:
 Скачать zip-архив, кликнув на зеленую кнопку **Code**, а затем на **Download ZIP**
 
