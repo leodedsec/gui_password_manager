@@ -1,1 +1,1 @@
-style/* linguist-vendored
+*.python linguist-detectable=true 
